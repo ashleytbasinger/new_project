@@ -7,7 +7,9 @@ describe User do
   it { should have_valid(:email).when('poison@gmail.com') }
   it { should_not have_valid(:email).when(nil, '') }
 
-  # it { should have_many :timeline_entries }
+  it { should have_many :timelines }
+  it { should have_many :photos }
+  it { should have_many :comments}
 
   it 'has a matching password confirmation for the password' do
     user = User.new
