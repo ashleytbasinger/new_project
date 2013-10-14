@@ -1,4 +1,6 @@
 NewProject::Application.routes.draw do
+  resources :photos
+
   resources :timelines
 
   devise_for :users
