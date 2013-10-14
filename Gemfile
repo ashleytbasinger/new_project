@@ -29,9 +29,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'simple_form'
 
-gem 'ransack'
+# gem 'ransack'
 
-gem 'stringex'
+# gem 'stringex'
 
 # Authentication
 gem 'devise'
