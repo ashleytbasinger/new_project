@@ -1,29 +1,23 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @photo.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @photo.title %>
+  </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @photo.date %>
-</p>
+  <p>
+    <strong>Date:</strong>
+    <%= @photo.date %>
+  </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @photo.image %>
-</p>
+  <p>
+    <strong>Image:</strong>
+    <img src=<%= @photo.image.to_s %>>
+      <!-- put comments form here -->
+  </p>
 
-<p>
-  <strong>Timeline:</strong>
-  <%= @photo.timeline_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @photo.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+  <%= link_to 'Edit', edit_photo_path(@photo) %>
+<% else %>
+  <a href="<%= new_user_session_path %>">sign in to upload a photo</a>
+<% end %>

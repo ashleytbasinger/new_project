@@ -1,5 +1,7 @@
-<h1>New photo</h1>
+<% if user_signed_in? %>
+  <h1>New photo</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', photos_path %>
+  <%= render 'form' %>
+<% else %>
+  <a href="<%= new_user_session_path %>">sign in to upload a photo</a>
+<% end %>
