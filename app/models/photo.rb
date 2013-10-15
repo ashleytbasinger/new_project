@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  # attr_accessor :timeline_id, :title, :image
   belongs_to :user
 
   belongs_to :timeline

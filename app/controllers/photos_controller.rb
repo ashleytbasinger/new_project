@@ -2,17 +2,24 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @photos = Photo.all
+    @timeline = Timeline.find(params[:timeline_id])
+    @photos = @timeline.photos.all
   end
 
   def show
+    @timeline = Timeline.find(params[:timeline_id])
+    @photo = @timeline.photos.find(params[:id])
   end
 
   def new
     @photo = Photo.new
+    #@timeline = Timeline.find(params[:timeline_id])
+    #@photo = @timeline.photos.new
   end
 
   def edit
+    @timeline = Timeline.find(params[:timeline_id])
+    @photo - @timeline.photos.find(params[:id])
   end
 
   def create

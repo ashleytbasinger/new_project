@@ -38,6 +38,7 @@ gem 'devise'
 
 # Gems for file upload
 gem 'carrierwave'
+gem 'rmagick'
 # gem 'fog'
 
 group :test, :development do

@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   <%= form_for(@photo) do |f| %>
+  <%= f.hidden_field :timeline_id %>
     <% if @photo.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
@@ -11,7 +12,6 @@
         </ul>
       </div>
     <% end %>
-
     <div class="field">
       <%= f.label :title %><br>
       <%= f.text_field :title %>
@@ -23,6 +23,12 @@
     <div class="field">
       <%= f.label :image %><br>
       <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%- if @timelines.present? -%>
+        <%= f.association :timeline %>
+      
+      <% end %>
     </div>
     <!-- <div class="field">
       <%= f.label :timeline_id %><br>

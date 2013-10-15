@@ -6,6 +6,7 @@ class TimelinesController < ApplicationController
   end
 
   def show
+    @timeline = Timeline.find(params[:id])
   end
 
   def new
@@ -13,6 +14,7 @@ class TimelinesController < ApplicationController
   end
 
   def edit
+    @timeline = Timeline.find(params[:id])
   end
 
   def create
@@ -56,6 +58,10 @@ class TimelinesController < ApplicationController
     end
 
     def timeline_params
-      params.require(:timeline).permit(:title, :user_id)
+      params.require(:timeline).permit(:title, :user_id,
+        photos_attributes: [:id, :title, :date, :comments,
+          comments_attributes: [:id, :content]
+        ]
+      )
     end
 end
