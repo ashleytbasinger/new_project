@@ -1,10 +1,9 @@
 <% if user_signed_in? %>
-  <h1>Listing timelines</h1>
+  <h1>Your timelines</h1>
   <table>
     <thead>
       <tr>
         <th>Title</th>
-        <th>User</th>
         <th></th>
         <th></th>
         <th></th>
@@ -17,7 +16,7 @@
           <td><%= timeline.title %></td>
           <td><%= link_to 'Show', timeline %></td>
           <td><%= link_to 'Edit', edit_timeline_path(timeline) %></td>
-          <td><%= link_to 'Destroy', timeline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Upload a photo', new_photo_path %></td>
         </tr>
       <% end %>
     </tbody>

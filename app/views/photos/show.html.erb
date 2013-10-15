@@ -1,9 +1,15 @@
 <% if user_signed_in? %>
+
   <p id="notice"><%= notice %></p>
 
   <p>
     <strong>Title:</strong>
     <%= @photo.title %>
+  </p>
+
+  <p>
+    <strong>Timeline:</strong>
+    <%= @photo.timeline.title %>
   </p>
 
   <p>

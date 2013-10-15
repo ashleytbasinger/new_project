@@ -5,10 +5,11 @@
   <%= @timeline.title %>
 </p>
 
-<!-- <p>
-  <strong>User:</strong>
-  <%= @timeline.user_id %>
-</p> -->
+<% @timeline.photos.each do |photo| %>
+  <%= photo.title %>
+  <%= image_tag photo.image %>  
+<% end %>
+
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_timeline_path(@timeline) %>
 <% else %>

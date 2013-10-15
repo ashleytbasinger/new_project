@@ -4,6 +4,7 @@
   <%= render 'form' %>
 
   <%= link_to 'Show', @photo %>
+  <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% else %>
   <a href="<%= new_user_session_path %>">sign in to edit your photo</a>
 <% end %>

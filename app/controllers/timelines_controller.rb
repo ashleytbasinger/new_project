@@ -7,6 +7,8 @@ class TimelinesController < ApplicationController
 
   def show
     @timeline = Timeline.find(params[:id])
+    @photos = @timeline.photos
+    # @photo = Photo.find(params[:id])
   end
 
   def new
@@ -19,40 +21,27 @@ class TimelinesController < ApplicationController
 
   def create
     @timeline = Timeline.new(timeline_params)
-
-    respond_to do |format|
       if @timeline.save
-        format.html { redirect_to @timeline, notice: 'Timeline was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @timeline }
+        redirect_to @timeline, notice: 'Timeline was successfully created.'
       else
-        format.html { render action: 'new' }
-        format.json { render json: @timeline.errors, status: :unprocessable_entity }
+        render action: 'new', notice: "Sorry- your timeline wasn't created. Try again!"
       end
-    end
+
   end
 
   def update
-    respond_to do |format|
       if @timeline.update(timeline_params)
-        format.html { redirect_to @timeline, notice: 'Timeline was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to @timeline, notice: 'Timeline was successfully updated.'
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @timeline.errors, status: :unprocessable_entity }
+        render action: 'edit'
       end
-    end
   end
 
   def destroy
     @timeline.destroy
-    respond_to do |format|
-      format.html { redirect_to timelines_url }
-      format.json { head :no_content }
-    end
   end
 
   private
-
     def set_timeline
       @timeline = Timeline.find(params[:id])
     end
