@@ -9,6 +9,13 @@
   <%= photo.title %>
   <%= image_tag photo.image %>  
 <% end %>
+<%= simple_form_for [@comment] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+<% @timeline.comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
 
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_timeline_path(@timeline) %>

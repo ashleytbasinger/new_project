@@ -7,11 +7,8 @@ class PhotosController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:user_id])
-    # @timeline = @user.timelines.find(params[:id])
-    # @photo = @timeline.photos.build(params[:photo])
-    # @timeline = Timeline.find(params[:id])
     @photo = Photo.find(params[:id])
+    @comment = @photo.comments.build
   end
 
   def new

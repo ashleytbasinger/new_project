@@ -8,7 +8,7 @@ class TimelinesController < ApplicationController
   def show
     @timeline = Timeline.find(params[:id])
     @photos = @timeline.photos
-    # @photo = Photo.find(params[:id])
+    @comment = @timeline.comments.build
   end
 
   def new
