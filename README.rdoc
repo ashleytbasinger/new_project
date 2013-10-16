@@ -1,11 +1,7 @@
 PlantShare
 =================
 
-Gems
-----
-* devise
-* carrierwave
-* simple_form
+A simple way for folks with a green thumb to manage plant growth and progress over time.
 
 Upcoming Features
 ----
