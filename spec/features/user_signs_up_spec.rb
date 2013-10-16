@@ -14,12 +14,12 @@ feature 'user signs up', %q{
     prev_count = User.count
 
     visit root_path
-    click_link 'Sign Up'
+    click_link 'Sign up'
 
     fill_in 'Username', with: 'poison_ivy'
     fill_in 'Email', with: 'poison@gmail.com'
-    fill_in 'Password', with: 'evil1234'
-    fill_in 'Password confirmation', with: 'evil1234'
+    fill_in 'user_password', with: "1234567890"
+    fill_in 'Password confirmation', with: "1234567890"
 
     click_button 'Sign up'
 

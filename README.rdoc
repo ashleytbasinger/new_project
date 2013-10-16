@@ -1,28 +1,22 @@
-== README
+PlantShare
+=================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gems
+----
+* devise
+* carrierwave
+* simple_form
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Upcoming Features
+----
+* add gems: 
+  -ransack
+  -stringex
+*Yelp.com API
+  -search for local greenhouses, nurseries, etc.
+*static pages
+  -"Planting 101"
+*ability to follow other users
+  -possible notification system for alerts
+*implementation of gridster.js
+  -interactive timeline grids
