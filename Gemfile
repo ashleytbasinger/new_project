@@ -41,6 +41,13 @@ gem 'carrierwave'
 gem 'rmagick'
 # gem 'fog'
 
+group :production do
+  gem 'rails_12factor'
+end
+
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl'
