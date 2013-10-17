@@ -18,5 +18,15 @@ feature 'user creates a timeline', %Q{
     expect(page).to have_content("Timeline was successfully created.")
     expect(Timeline.count).to eql(prev_count + 1)
   end
+
+  scenario 'timeline has no title' do 
+    sign_in_as(user)
+    prev_count = Timeline.count
+    visit new_timeline_path
+    click_button "Create Timeline"
+    expect(page).to have_content("can't be blank")
+    expect(Timeline.count).to eql(prev_count)
+  end
+
   include PlantShareTestHelpers
 end
