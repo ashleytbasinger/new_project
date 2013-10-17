@@ -7,6 +7,11 @@ feature 'user creates a timeline', %Q{
 
 } do 
 
+  # Acceptance Criteria
+
+  # * I will be able to chronicle photos by date and project
+  # * I will be able to organize these photos
+
   let(:user) { FactoryGirl.create(:user) }
 
   scenario 'user creates a timeline' do 

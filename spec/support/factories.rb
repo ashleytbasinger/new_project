@@ -9,7 +9,7 @@ end
 
 FactoryGirl.define do
   factory :timeline do
-    title "new timeline"
+    title "timeline1"
   end
 end
 
