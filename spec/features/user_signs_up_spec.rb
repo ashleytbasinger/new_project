@@ -26,4 +26,14 @@ feature 'user signs up', %q{
     expect(page).to have_content("Welcome! You have signed up successfully.")
     expect(User.count).to eql(prev_count + 1)
   end
+
+  scenario 'user signs up with invalid credentials' do
+    previous_count = User.count
+
+    visit new_user_registration_path
+    click_button 'Sign up'
+
+    expect(page).to have_content("can't be blank")
+    expect(User.count).to eql(previous_count)
+  end
 end
