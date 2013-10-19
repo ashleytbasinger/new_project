@@ -1,6 +1,5 @@
 <% if user_signed_in? %>
   <h1><%= current_user.username %></h1>
-  <% if false %>
   <table>
     <thead>
       <tr>
@@ -22,35 +21,27 @@
       <% end %>
     </tbody>
   </table>
-  <% end %>
 
   <div class="gridster">
     <ul>
-      <% @timelines.each do |timeline| %>
-        <% row = 1 %>
-        <% timeline.photos.each do |picture| %>
-
-          <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag(picture.image, class: 'timeline_image') %></li>
-          <% row += 1 %>
-        <!-- <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
-        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap1a.jpg" %></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap2a.jpg" %></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap3a.jpg" %></li>
  
-        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
-        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
+        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"><%= image_tag "flytrap6a.jpg" %></li>
+        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"><%= image_tag "flytrap7a.jpg" %></li>
  
-        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
-        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
-        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap5a.jpg" %></li>
+        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"><%= image_tag "flytrap9a.jpg" %></li>
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap11a.jpg" %></li>
  
-        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
-        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap4a.jpg" %></li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap10b.jpg" %></li>
  
-        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
-        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li> -->
-        <% end %>
-        <% end %>
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"><%= image_tag "flytrap12b.jpg" %></li>
+        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"><%= image_tag "flytrap8a.jpg" %></li>
     </ul>
-</div>
+  </div>
 
   <br>
 
