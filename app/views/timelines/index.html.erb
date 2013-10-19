@@ -1,27 +1,17 @@
 <% if user_signed_in? %>
-  <h1><%= current_user.username %></h1>
+  <h1><center><%= current_user.username %></center></h1>
   <table>
     <thead>
       <tr>
-        <th>Title</th>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>
       </tr>
     </thead>
 
-    <tbody>
-      <% @timelines.each do |timeline| %>
-        <tr>
-          <td><%= timeline.title %></td>
-          <td><%= link_to 'Show', timeline %></td>
-          <td><%= link_to 'Edit', edit_timeline_path(timeline) %></td>
-          <td><%= link_to 'Upload a photo', new_photo_path %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
+  <div><center><a href="#">follow</a></center></div>  
+  <div><center>Venus Fly Trap</center></div>
   <div class="gridster">
     <ul>
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap1a.jpg" %></li>
@@ -42,12 +32,45 @@
         <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"><%= image_tag "flytrap8a.jpg" %></li>
     </ul>
   </div>
+  <div class='edit_timeline'>
+    <!-- <tbody>
+        <% @timelines.each do |timeline| %>
+          <tr>
+            <td><%= timeline.title %></td>
+            <td><%= link_to 'Show', timeline %></td>
+            <%= link_to 'Edit', edit_timeline_path(timeline) %>
+            <td><%= link_to 'Upload a photo', new_photo_path %></td>
+          </tr>
+        <% end %>
+      </tbody> -->
+    </table>
+  </div>
 
   <br>
 
-  <%= link_to 'New Timeline', new_timeline_path %>
+  
 <% else %>
-  <p>
-    Please sign in!
-  </p>
+  <div>
+    <h1><center>PlantShare</center></h1>
+  </div>
+  <div class="gridster">
+    <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap1a.jpg" %></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap2a.jpg" %></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap3a.jpg" %></li>
+ 
+        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"><%= image_tag "flytrap6a.jpg" %></li>
+        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"><%= image_tag "flytrap7a.jpg" %></li>
+ 
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap5a.jpg" %></li>
+        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"><%= image_tag "flytrap9a.jpg" %></li>
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap11a.jpg" %></li>
+ 
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap4a.jpg" %></li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap10b.jpg" %></li>
+ 
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"><%= image_tag "flytrap12b.jpg" %></li>
+        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"><%= image_tag "flytrap8a.jpg" %></li>
+    </ul>
+  </div>
 <% end %>

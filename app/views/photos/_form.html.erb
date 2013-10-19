@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %>
   <%= form_for(@photo) do |f| %>
     <% if @photo.errors.any? %>
@@ -25,12 +26,12 @@
     </div>
     <div class="field">
       <%= f.label :timeline %><br>
-      <%= f.collection_select :timeline_id, Timeline.all, :id, :title %>
+      <%= f.collection_select :timeline_id, Timeline.all, :id, :title %><br><br>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Create Photo", :class => "btn btn-success" %>
     </div>
   <% end %>
 <% else %>
-  <a href="<%= new_user_session_path %>">sign in to upload a photo</a>
+  <center><a href="<%= new_user_session_path %>">sign in to upload a photo</a></center>
 <% end %>
