@@ -12,6 +12,10 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+h1 {
+  font-family: 'Leckerli One', cursive;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
@@ -24,7 +28,7 @@ a {
     color: #666;
   }
   &:hover {
-    color: #fff;
+    color: #96ED89;
     background-color: #000;
   }
 }

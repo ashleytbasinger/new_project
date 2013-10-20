@@ -33,7 +33,7 @@ feature 'user uploads a photo', %Q{
     expect(page).to have_content("Timeline was successfully created.")
     expect(Timeline.count).to eql(prev_count + 1)
 
-    click_link "Upload"
+    click_link "Upload Progress"
     visit new_photo_path
     fill_in "Title", with: "Day 1"
     select '2013', from: 'photo_date_1i'

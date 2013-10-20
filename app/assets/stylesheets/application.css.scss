@@ -1,5 +1,6 @@
 @import "twitter/bootstrap";
 @import "jquery.gridster";
+@import url(http://fonts.googleapis.com/css?family=Leckerli+One);
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -26,8 +27,32 @@
   }
  }
 
- #user_username {
-    width: 30%;
+.navbar-default {
+  background-color: #54854D;
+  border-color: #54854D;
+}
+
+.navbar-default
+.navbar-brand {
+  font-size: 2em;
+  color: white;
+  font-family: 'Leckerli One', cursive;
+}
+
+h1, .h1 {
+  font-family: 'Leckerli One', cursive;
+}
+
+.navbar-default 
+.navbar-nav > li > a {
+  font-size: 1.1em;
+  color: #fff;
+  font-family: 'Leckerli One', cursive;
+
+}
+
+#user_username {
+  width: 30%;
  }
 
 #user_email {

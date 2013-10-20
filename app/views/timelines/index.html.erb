@@ -26,9 +26,7 @@
   </div>
   <div class='edit_timeline'>
         <% @timelines.each do |timeline| %>
-          <%= link_to 'Show', timeline %>
           <%= link_to 'Edit', edit_timeline_path(timeline) %>
-          <%= link_to 'Upload a photo', new_photo_path %>
         <% end %>
   <div class="field">
     <%= form_for(@comment) do |f| %>
@@ -46,11 +44,13 @@
     </table>
 
   <br>
+  <br>
+  <br>
+  <br>
 
-  
 <% else %>
-  <div>
-    <h1><center>PlantShare</center></h1>
+  <div class='site-title'>
+    <h1><center><%= image_tag "logo.png" %></center></h1>
   </div>
   <div class="gridster">
     <ul>
