@@ -3,11 +3,12 @@ class TimelinesController < ApplicationController
 
   def index
     @timelines = Timeline.all
+    @comment = Comment.new
   end
 
   def show
     @timeline = Timeline.find(params[:id])
-    @photos = @timeline.photos
+    # @photos = @timeline.photos
     @comment = @timeline.comments.build
   end
 

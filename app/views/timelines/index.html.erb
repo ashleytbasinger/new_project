@@ -1,17 +1,9 @@
 <% if user_signed_in? %>
   <h1><center><%= current_user.username %></center></h1>
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+    <table>
 
   <div><center><a href="#">follow</a></center></div>  
-  <div><center>Venus Fly Trap</center></div>
+  <div><center>Venus Fly Trap</center></div><br>
   <div class="gridster">
     <ul>
         <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap1a.jpg" %></li>
@@ -33,18 +25,25 @@
     </ul>
   </div>
   <div class='edit_timeline'>
-    <!-- <tbody>
         <% @timelines.each do |timeline| %>
-          <tr>
-            <td><%= timeline.title %></td>
-            <td><%= link_to 'Show', timeline %></td>
-            <%= link_to 'Edit', edit_timeline_path(timeline) %>
-            <td><%= link_to 'Upload a photo', new_photo_path %></td>
-          </tr>
+          <%= link_to 'Show', timeline %>
+          <%= link_to 'Edit', edit_timeline_path(timeline) %>
+          <%= link_to 'Upload a photo', new_photo_path %>
         <% end %>
-      </tbody> -->
-    </table>
+  <div class="field">
+    <%= form_for(@comment) do |f| %>
+      Comments<br>
+      <%= f.text_area :content %><br>
+      <%= f.submit "Comment", :class => "btn btn-success" %>
+    <% end %>
   </div>
+  <div>
+ <!-- Comments will be listed here -->
+  </div>
+
+  </div>
+  </div>
+    </table>
 
   <br>
 
@@ -74,3 +73,7 @@
     </ul>
   </div>
 <% end %>
+<br>
+<br>
+<br>
+<br>

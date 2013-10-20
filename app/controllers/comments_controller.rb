@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @comments = Comment.all
+    @timeline = Timeline.(params[:timeline_id])
+    @comment = @timeline.comments
   end
 
   def show
@@ -10,13 +11,17 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
+    @timeline = Timeline.find(params[:timeline_id])
   end
 
   def edit
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    # @timeline = Timeline.find(params[:timeline_id])
+    @comment = @timeline.comments.build(comment_params)
+    # @comment.user = current_user
+    @comment = Comment.new
       if @comment.save
         redirect_to @comment, notice: 'Comment was successfully created.'
       else
