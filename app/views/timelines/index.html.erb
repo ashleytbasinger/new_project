@@ -2,45 +2,34 @@
   <h1><center><%= current_user.username %></center></h1>
     <table>
 
-  <div><center><a href="#">follow</a></center></div>  
-  <div><center>Venus Fly Trap</center></div><br>
-  <div class="gridster">
-    <ul>
-        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap1a.jpg" %></li>
-        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap2a.jpg" %></li>
-        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap3a.jpg" %></li>
- 
-        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"><%= image_tag "flytrap6a.jpg" %></li>
-        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"><%= image_tag "flytrap7a.jpg" %></li>
- 
-        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap5a.jpg" %></li>
-        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"><%= image_tag "flytrap9a.jpg" %></li>
-        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap11a.jpg" %></li>
- 
-        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap4a.jpg" %></li>
-        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap10b.jpg" %></li>
- 
-        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"><%= image_tag "flytrap12b.jpg" %></li>
-        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"><%= image_tag "flytrap8a.jpg" %></li>
-    </ul>
-  </div>
-  <div class='edit_timeline'>
-        <% @timelines.each do |timeline| %>
-          <%= link_to 'Edit', edit_timeline_path(timeline) %>
-        <% end %>
-  <div class="field">
-    <%= form_for(@comment) do |f| %>
-      Comments<br>
-      <%= f.text_area :content %><br>
-      <%= f.submit "Comment", :class => "btn btn-success" %>
-    <% end %>
-  </div>
-  <div>
+      <div><center><a href="#">follow</a></center></div>  
+      <div><center>Venus Fly Trap</center></div><br>
+      <div class="gridster">
+        <ul>
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap1a.jpg" %></li>
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap2a.jpg" %></li>
+            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><%= image_tag "flytrap3a.jpg" %></li>
+     
+            <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"><%= image_tag "flytrap6a.jpg" %></li>
+            <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"><%= image_tag "flytrap7a.jpg" %></li>
+     
+            <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap5a.jpg" %></li>
+            <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"><%= image_tag "flytrap9a.jpg" %></li>
+            <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"><%= image_tag "flytrap11a.jpg" %></li>
+     
+            <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap4a.jpg" %></li>
+            <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"><%= image_tag "flytrap10b.jpg" %></li>
+     
+            <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"><%= image_tag "flytrap12b.jpg" %></li>
+            <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"><%= image_tag "flytrap8a.jpg" %></li>
+        </ul>
+      </div>
+      <div class='edit_timeline'>
+            <% @timelines.each do |timeline| %>
+              <%= link_to 'Edit', edit_timeline_path(timeline) %>
+            <% end %>
+      <div>
  <!-- Comments will be listed here -->
-  </div>
-
-  </div>
-  </div>
     </table>
 
   <br>

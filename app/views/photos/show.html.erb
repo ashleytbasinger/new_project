@@ -20,14 +20,6 @@
   <p>
     <strong>Image:</strong>
     <img src=<%= @photo.image.to_s %>>
-      <!-- put comments form here -->
-    <%= simple_form_for [@comment] do |f| %>
-      <%= f.input :content %>
-      <%= f.submit %>
-    <% end %>
-    <% @photo.comments.each do |comment| %>
-      <%= comment.content %>
-    <% end %>
   </p>
 
   <%= link_to 'Edit', edit_photo_path(@photo) %>
