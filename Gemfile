@@ -40,7 +40,7 @@ gem 'devise'
 # Gems for file upload
 gem 'carrierwave'
 gem 'rmagick'
-# gem 'fog'
+gem 'fog'
 
 group :production do
   gem 'rails_12factor'
